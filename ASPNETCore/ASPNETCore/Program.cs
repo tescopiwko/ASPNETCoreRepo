@@ -8,6 +8,7 @@ namespace ASPNETCore
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            Console.WriteLine("Hello from ASP.NET Core!");
 
             var app = builder.Build();
 
