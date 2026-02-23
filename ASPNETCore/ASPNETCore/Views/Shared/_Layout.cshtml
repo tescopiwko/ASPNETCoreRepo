@@ -4,8 +4,50 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TrustMeBroBank</title>
+    @* Odkaz na tvůj CSS soubor v wwwroot/css/site.css *@
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    @RenderBody()
+    <div class="container">
+        <header>
+            <div class="main-title">
+                <h1>TrustMeBroBank</h1>
+                <div class="button-group">
+                    <button class="standard-button">Přihlásit se</button>
+                    <button class="standard-button">Registrovat</button>
+                </div>
+            </div>
+            <nav class="links-within-site">
+                <table class="odkazy-na-jednotlive-stranky">
+                    <tr>
+                        <td class='@(ViewData["ActivePage"]?.ToString() == "Index" ? "active" : "")'>
+                            <a asp-controller="Home" asp-action="Index">Domů</a>
+                        </td>
+                        <td class='@(ViewData["ActivePage"]?.ToString() == "Onas" ? "active" : "")'>
+                            <a asp-controller="Home" asp-action="Onas">O nás</a>
+                        </td>
+                        <td class='@(ViewData["ActivePage"]?.ToString() == "Sluzby" ? "active" : "")'>
+                            <a asp-controller="Home" asp-action="Sluzby">Služby</a>
+                        </td>
+                        <td class='@(ViewData["ActivePage"]?.ToString() == "Kontakt" ? "active" : "")'>
+                            <a asp-controller="Home" asp-action="Kontakt">Kontakt</a>
+                        </td>
+                    </tr>
+                </table>
+            </nav>
+        </header>
+
+        <main role="main">
+            @* TADY SE BUDE VKLÁDAT OBSAH JEDNOTLIVÝCH STRÁNEK *@
+            @RenderBody()
+        </main>
+
+        <footer style="margin-top: 50px; padding: 20px; border-top: 1px solid rgba(0,0,0,0.1);">
+            <p>&copy; 2026 TrustMeBroBank | Licencováno v zemi, o které jste pravděpodobně nikdy neslyšeli.</p>
+        </footer>
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -11,10 +11,15 @@ namespace _06_AspNetCore
 
             var app = builder.Build();
 
+
             // Configure the HTTP request pipeline.
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseAuthorization();
+
+       
 
             app.MapStaticAssets();
             app.MapControllerRoute(

@@ -1,0 +1,193 @@
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: gray;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: lightblue;
+    padding: 0 5px;
+}
+
+.main-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    margin: 0;
+    text-align: left;
+}
+
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    align-items: flex-start;
+}
+
+
+.standard-button {
+    padding: 7px 10px;
+}
+
+    .standard-button:hover {
+        cursor: pointer;
+    }
+
+.odkazy-na-jednotlive-stranky {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+}
+
+.links-within-site {
+    margin: 5px 0;
+}
+
+    .links-within-site td {
+        padding: 0;
+        border: 1px solid black;
+        background-color: lightyellow;
+        text-align: center;
+    }
+
+        .links-within-site td a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        .links-within-site td:hover {
+            background-color: orange;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .links-within-site td.active {
+            background-color: darkorange;
+        }
+
+
+            .links-within-site td.active a {
+                font-weight: bold;
+            }
+
+/* SLUZBY */
+
+.services-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.service-box {
+    flex: 1;
+    min-width: 250px;
+    background-color: lightyellow;
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Cena v balíèku */
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Seznam výhod */
+.features-list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+}
+
+    .features-list li {
+        margin: 10px 0;
+    }
+
+/* Specifické úpravy pro GOLD balíèek */
+.gold-box {
+    background-color: white;
+    border: 2px solid orange;
+    transform: scale(1.05); /* Trochu ho zvìtšíme */
+    z-index: 1;
+}
+
+.badge {
+    background: orange;
+    color: white;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gold-btn {
+    background-color: orange;
+}
+
+/* Specifické úpravy pro WHALE balíèek */
+.whale-box {
+    background-color: #333;
+    color: white;
+}
+
+.whale-btn {
+    background-color: white;
+    color: black;
+}
+
+
+/* KONTAKT */
+.contact-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.fake-map {
+    height: 200px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    margin-top: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    box-sizing: border-box; /* Tohle už znáš z tabulky! */
+}
