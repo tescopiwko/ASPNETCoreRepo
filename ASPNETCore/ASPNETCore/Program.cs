@@ -1,4 +1,4 @@
-namespace ASPNETCore
+namespace _06_AspNetCore
 {
     public class Program
     {
@@ -8,15 +8,10 @@ namespace ASPNETCore
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            Console.WriteLine("Hello from ASP.NET Core!");
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
             app.UseRouting();
 
             app.UseAuthorization();
