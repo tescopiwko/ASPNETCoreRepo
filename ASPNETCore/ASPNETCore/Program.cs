@@ -1,4 +1,4 @@
-namespace _06_AspNetCore
+namespace ASPNETCore
 {
     public class Program
     {
