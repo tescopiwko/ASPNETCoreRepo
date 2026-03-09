@@ -2,16 +2,16 @@
     ViewData["Title"] = "Login";
 }
 
-<form action="#" method="post">
+<form action="/User/Login" method="post">
     <div>
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" name="username" placeholder="Uzivatelske jmeno...">
     </div>
 
     <div>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" name="password" placeholder="Heslo...">
     </div>
 
-    <button type="submit">Login</button>
+    <input type="submit" value="Přihlášení"/>
 </form>

@@ -2,28 +2,23 @@
     ViewData["Title"] = "Register";
 }
 
-<form action="#" method="post">
-    <div>
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-    </div>
+@{
+    if (!string.IsNullOrEmpty(ViewData["chyba"]?.ToString()))
+    {
+        <span class="chyba">@ViewData["chyba"]</span>
+    }
+}
 
-    <div>
-        <label for="username">Choose Username:</label>
-        <input type="text" id="username" name="username" required>
-    </div>
+<form action="/User/Register" method="post">
+    
+    <input type="text" name="username" placeholder="Uzivatelske jmeno..."/>
+    <br />
 
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-    </div>
+    <input type="password" name="password" placeholder="Heslo..."/>
+    <br />
 
-    <div>
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
-    </div>
+    <input type="password" name="passwordCheck" placeholder="Heslo pro kontrolu...">
+    <br />
 
-    <button type="submit">Create Account</button>
-  
-    <p>Already have an account? <a href="login.html">Login here</a></p>
+    <input type="submit" value="Registrovat"/>
 </form>

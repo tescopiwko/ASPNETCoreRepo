@@ -191,3 +191,8 @@ h1 {
     border: 1px solid black;
     box-sizing: border-box; /* Tohle už znáš z tabulky! */
 }
+
+
+.chyba {
+    color: red;
+}
