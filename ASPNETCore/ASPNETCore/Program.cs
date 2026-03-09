@@ -11,9 +11,13 @@ namespace ASPNETCore
 
             var app = builder.Build();
 
+            
+
 
             // Configure the HTTP request pipeline.
             app.UseStaticFiles();
+
+            app.UseStatusCodePagesWithReExecute("/Home/Error", "?kodChyby={0}"); // Přesměrování na akci HomeController.Error pro zobrazení chybových stránek
 
             app.UseRouting();
 

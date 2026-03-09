@@ -27,5 +27,11 @@ namespace ASPNETCore.Controllers
         {
             return View();
         }
+
+        public IActionResult Error(int? kodChyby)
+        {
+            ViewData["kod_chyby"] = kodChyby ?? 500;
+            return View();
+        }
     }
 }
