@@ -1,9 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ASPNETCore.Data;
+using ASPNETCore.Models;
+using Microsoft.AspNetCore.Mvc;
+
+
+
 
 namespace ASPNETCore.Controllers;
 
 public class UserController : Controller
 {
+    private readonly ApplicationDbContext _db;
+
+    public UserController(ApplicationDbContext db)
+    {
+        _db = db;
+    }
     // GET
     public IActionResult Index()
     {
@@ -35,6 +46,13 @@ public class UserController : Controller
         }
         else
         {
+            _db.Users.Add(new User()
+            {
+                Username = username,
+                Password = password
+            });
+            _db.SaveChanges();
+
             return Redirect("/User/Login");
         }
     }
