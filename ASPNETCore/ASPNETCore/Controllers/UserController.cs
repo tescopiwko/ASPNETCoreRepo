@@ -45,7 +45,7 @@ public class UserController : Controller
         _db.Users.Add(new User()
         {
             Username = username,
-            Password = password
+            Password = BCrypt.Net.BCrypt.HashPassword(password)
         });
         _db.SaveChanges();
 
@@ -81,7 +81,7 @@ public class UserController : Controller
             return View();
         }
 
-        if (loggedUser.Password != password)
+        if (!BCrypt.Net.BCrypt.Verify(password, loggedUser))
         {
             ViewData["chyba"] = "Neplatné heslo.";
             return View();
