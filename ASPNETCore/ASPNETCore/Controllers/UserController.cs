@@ -81,7 +81,7 @@ public class UserController : Controller
             return View();
         }
 
-        if (!BCrypt.Net.BCrypt.Verify(password, loggedUser))
+        if (!BCrypt.Net.BCrypt.Verify(password, loggedUser.Password))
         {
             ViewData["chyba"] = "Neplatné heslo.";
             return View();
