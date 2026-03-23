@@ -109,5 +109,12 @@ public class UserController : Controller
         return View(loggedUser);
     }
 
+    public new IActionResult SignOut()
+    {
+        HttpContext.Session.Clear();
+        Response.Cookies.Delete("AspNetCore.Session");
+
+        return Redirect("/Home/Index");
+    }
 
 }
