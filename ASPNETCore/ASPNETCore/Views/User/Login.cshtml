@@ -2,6 +2,12 @@
     ViewData["Title"] = "Login";
 }
 
+@{
+    if (!string.IsNullOrEmpty(ViewData["chyba"]?.ToString()))
+    {
+        <span class="chyba">@ViewData["chyba"]</span>
+    }
+}
 <form action="/User/Login" method="post">
     <div>
         <label for="username">Username:</label>
