@@ -87,12 +87,26 @@ public class UserController : Controller
             return View();
         }
 
+        HttpContext.Session.SetString("logged", username);
+
         return Redirect("/User/Profile");
     }
 
     public IActionResult Profile()
     {
-        return View();
+        string? logged = HttpContext.Session.GetString("logged");
+
+        if (logged == null)
+        {
+            return Redirect("/User/Login");
+        }
+
+        User loggedUser = _db
+            .Users
+            .Where(u => u.Username == logged)
+            .First();
+
+        return View(loggedUser);
     }
 
 

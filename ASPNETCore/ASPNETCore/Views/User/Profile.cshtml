@@ -2,24 +2,8 @@
     ViewData["Title"] = "Profile";
 }
 
-<section>
-    <p>Jste prihlasen jako <b></b></p>
-    <h2>User Profile</h2>
+@model ASPNETCore.Models.User;
 
-    <div style="margin-bottom: 20px;">
-        <img src="https://via.placeholder.com/150" alt="Profile Picture" style="border-radius: 50%;">
-    </div>
 
-    <div>
-        <p><strong>Username:</strong> <span id="display-username">JohnDoe123</span></p>
-        <p><strong>Email:</strong> <span id="display-email">john@example.com</span></p>
-        <p><strong>Member Since:</strong> <span>March 2026</span></p>
-    </div>
-
-    <hr>
-
-    <nav>
-        <button onclick="location.href='edit-profile.html'">Edit Profile</button>
-        <button onclick="location.href='login.html'" style="background-color: #ff4d4d; color: white;">Logout</button>
-    </nav>
-</section>
+<p>Jste prihlasen jako <b>@Model.Username</b></p>
+    
