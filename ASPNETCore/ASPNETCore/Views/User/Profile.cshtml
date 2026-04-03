@@ -5,11 +5,32 @@
 @model ASPNETCore.Models.User;
 
 
-<p>Jste prihlasen jako <b>@Model.Username</b></p>
+<p>
+    Jste prihlasen jako <b>@Model.Username</b>
+</p>
 
 <form action="/User/SignOut" method="post">
-    <input type="submit" value="Odhlasit" />   
+    <input type="submit" value="Odhlasit" />
 </form>
+
+<div>
+    <h2>Psani poznamek</h2>
+    @if (TempData["chyba"] != null)
+    {
+        <span class="chyba">@TempData["chyba"]</span>
+    }
+    <form action="/Note/Add" method="post">
+        <input type="text" name="title" placeholder="Nadpis..."/>
+        <br />
+        <textarea name="content" placeholder="Text poznamky...">@if(TempData["text"] != null)
+            { @TempData["text"] }
+        </textarea>
+        <br />
+        <input type="submit" value="Ulozit poznamku"/>
+    </form>
+        
+<div/>
+
 
 
     
