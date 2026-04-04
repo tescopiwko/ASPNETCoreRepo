@@ -1,0 +1,13 @@
+﻿@model List<ASPNETCore.Models.Note>
+
+@{
+    ViewData["Title"] = "Moje poznamky"; 
+}
+
+@foreach (ASPNETCore.Models.Note poznamka in Model)
+{
+    <div>
+        <strong>@poznamka.Title</strong>
+        <p>@poznamka.Content</p>
+    </div>
+}

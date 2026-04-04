@@ -88,6 +88,7 @@ public class UserController : Controller
         }
 
         HttpContext.Session.SetString("logged", username);
+        TempData["logged"] = username;
 
         return Redirect("/User/Profile");
     }
@@ -113,6 +114,8 @@ public class UserController : Controller
     {
         HttpContext.Session.Clear();
         Response.Cookies.Delete("AspNetCore.Session");
+
+        TempData["logged"] = "";
 
         return Redirect("/Home/Index");
     }

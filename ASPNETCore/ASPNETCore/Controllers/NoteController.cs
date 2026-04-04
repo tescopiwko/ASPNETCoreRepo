@@ -45,5 +45,29 @@ namespace ASPNETCore.Controllers
 
             return RedirectToAction("Profile", "User");
         }
+
+        public IActionResult List()
+        {
+            string? loggedUsername = HttpContext.Session.GetString("logged");
+
+            if (loggedUsername == null)
+            {
+                return Redirect("/User/Login");
+            }
+
+            User loggedUser = _db
+                .Users
+                .Where(u => u.Username == loggedUsername)
+                .First();
+
+            List<Note> poznamkyPrihlasenehoUzivatele = _db
+                .Notes
+                .Where(n => n.Owner == loggedUser)
+                .ToList();
+
+            poznamkyPrihlasenehoUzivatele.Reverse();
+
+            return View(poznamkyPrihlasenehoUzivatele);
+        }
     }
 }
