@@ -37,6 +37,7 @@ namespace ASPNETCore.Controllers
             {
                 Title = title,
                 Content = content,
+                Created = DateTime.Now,
                 Owner = loggedUser
             };
 

@@ -15,6 +15,9 @@ namespace ASPNETCore.Models
         public string Content { get; set; }
 
         [Required]
+        public DateTime Created { get; set; }
+
+        [Required]
         public int UserId { get; set; }
 
         [ForeignKey(nameof(UserId))]

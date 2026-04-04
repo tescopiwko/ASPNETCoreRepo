@@ -7,7 +7,7 @@
 @foreach (ASPNETCore.Models.Note poznamka in Model)
 {
     <div>
-        <strong>@poznamka.Title</strong>
+        <b>@poznamka.Title</b> <i>@poznamka.Created</i>
         <p>@poznamka.Content</p>
     </div>
 }
