@@ -13,7 +13,7 @@
             <div class="main-title">
                 <h1>TrustMeBroBank</h1>
                 <div class="button-group">
-                    @if (TempData["logged"] == null)
+                    @if (Context.Session.GetString("logged") == null)
                     {
                         <button class="standard-button" onclick="window.location.href='/User/Login'">Přihlásit se</button>
                         <button class="standard-button" onclick="window.location.href='/User/Register'">Registrovat</button>
